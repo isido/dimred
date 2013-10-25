@@ -1,0 +1,44 @@
+#! /usr/bin/env python
+#
+#    Dimensionality Reduction Tools
+#    Copyright (C) 2010 Ilja Sidoroff
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#    dr-reduce: Perform dimensionality reduction
+#
+#
+
+import sys
+
+import numpy
+
+import pca
+
+if len(sys.argv) < 4:
+    print "Usage: dr-reduce method original target_dim"
+    sys.exit(1)
+
+orig = numpy.genfromtxt(sys.argv[2])
+
+method = sys.argv[1]
+target_dim = int(sys.argv[3])
+
+if method == "pca":
+    y = pca.pca_cov(orig, target_dim)
+    print y
+    sys.exit(0)
+
+else:
+    print "Supported methods: pca"

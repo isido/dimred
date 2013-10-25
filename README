@@ -1,0 +1,24 @@
+Dimensionality reduction tools in python
+========================================
+
+Here are some tools I use in dimensionality reduction research. So far
+on error measures (trustworthiness, continuity) for datasets are
+implemented, but I might get around implementing something else if or
+when I have need for them.
+
+You need to have numpy installed to run the programs. These are
+python2 programs.
+
+Programs
+--------
+
+dr-error.py C
+  alculate error measures for original and projected
+  datasets. Measures currently supported are trustworthiness and
+  continuity.
+
+
+Author
+------
+
+ilja.sidoroff@iki.fi
